@@ -1,0 +1,29 @@
+<p>register works!</p>
+<div class="container">
+    <h2>Register</h2>
+    <form (ngSubmit)="onSubmit()" #registerForm="ngForm">
+      <div class="form-group">
+        <label for="uname">Username</label>
+        <input type="text" id="uname" class="form-control" [(ngModel)]="uname" name="uname" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="pwd">Password</label>
+        <input type="password" id="pwd" class="form-control" [(ngModel)]="pwd" name="pwd" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="phno">Phone Number</label>
+        <input type="number" id="phno" class="form-control" [(ngModel)]="phno" name="phno" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="roles">Roles</label><br>
+        <input type="checkbox" [(ngModel)]="roles" name="" value="USER"> User
+        <input type="checkbox" [(ngModel)]="roles" name="roles" value="ADMIN"> Admin
+      </div>
+  
+      <button type="submit" class="btn btn-primary" [disabled]="!registerForm.form.valid">Register</button>
+    </form>
+  </div>
+  
